@@ -1,0 +1,12 @@
+<header>
+    <div class="overlay__box"></div>
+    <div class="header-box">
+
+        {{> themeswitch}}
+        {{#if userData}} 
+            <div class="header-box--logout">
+                {{#button "POST" "/logout" "logout" "submit" "Logout"}}{{/button}}
+            </div>
+        {{/if}}
+    </div>
+</header>

@@ -1,0 +1,15 @@
+{{> header}}
+<section class="auth-container register">
+  <h3 class="h3--auth">Register</h3>
+  {{>form-errors this}}
+  <form method="post" action="register">
+    {{#each inputs}}
+      {{>form-input this}}
+    {{/each}}
+    <div class="footer-container">
+      <input type="reset" class="btn btn-clear" value="Clear">
+      <input type="submit" class="btn btn-register" value="Register">
+    </div>
+  </form>
+    {{#button "GET" "/login" "btn btn-login" "submit" "Login"}}{{/button}}
+</section>

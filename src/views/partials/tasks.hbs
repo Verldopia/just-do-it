@@ -1,0 +1,26 @@
+<div class="box-clear">
+    {{#length taskData false "pending"}}{{/length}}
+    <form method="POST">
+        <input type="hidden" name="id" value="{{id}}">
+        <button formaction="/deletePendingTasks" type="submit" class="submit submit--clear">Clear All</button>
+    </form>
+</div>
+
+<ul class="tasks">
+    {{#each taskData}}
+        {{#unless checked}}
+            <li id="task-{{id}}" data-order="{{id}}">
+                <form class="task__box" method="POST">
+                    <input class="task__move" type="text" name="title" value="{{#capital title}}{{/capital}}"></input>
+                    <input type="hidden" name="id" value="{{id}}"></input>
+                    <button formaction="/editTask" type="submit" class="move"></button>
+                </form>
+                <form class="input__form" method="POST">
+                    <input type="hidden" name="id" value="{{id}}">
+                    <button formaction="/finishTask" type="submit" class="done"></button>
+                    <button formaction="/deleteTask" type="submit" class="clear"></button>
+                </form>
+            </li>
+        {{/unless}}
+    {{/each}}
+</ul>
