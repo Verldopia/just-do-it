@@ -102,7 +102,7 @@ createConnection({
 }).then(() => {
   app.listen(process.env.PORT, () => {
     console.log(
-      `Application is running on http://localhost:${process.env.PORT}/register`
+      `Application is running on http://localhost:${process.env.PORT}/login`
     );
   });
 });

@@ -19,7 +19,6 @@ export const home = async (req, res) => {
     categoryData.find((e) => e.id == req.query.id) ?? categoryData[0];
   const taskData = currentCategory?.tasks ?? [];
   const categories = currentCategory?.id ?? 1;
-  
   // Render to homepage
   res.render('home', {
     taskData,
@@ -162,12 +161,12 @@ export const homeEditObject = async (objectName, status, req, res, next) => {
     const repository = getConnection().getRepository(objectName);
 
     // Search if object already exists
-    let object = await repository.findOne({
+    const object = await repository.findOne({
       where: { id: req.body.id },
     });
 
     // Add objects to done-list
-    object = await repository.save({
+    await repository.save({
       ...object,
       checked: status,
       title: req.body.title,
