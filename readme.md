@@ -17,7 +17,7 @@ Themeswitch: Click the icon to enjoy beautiful themes.<br>
 Button to-top, clear all pending tasks, clear all finished tasks
 
 ## Installation
-1.) Open terminal in the "app" folder,<br>
+1.) Open terminal in the root folder,<br>
 2.) Run "npm install express",<br>
 3.) Run "npm run start",<br>
 4.) Server is running on "http://localhost:3000/login".
